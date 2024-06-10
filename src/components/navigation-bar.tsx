@@ -4,7 +4,7 @@ import { useContext, useState } from "react";
 import { AuthorContext } from "../App";
 import { Theme } from "./constants";
 
-const defaultTheme: string = Theme.RETRO;
+const defaultTheme: string = Theme.DARK;
 
 const NavigationBar: React.FC = () => {
   const { author } = useContext(AuthorContext);

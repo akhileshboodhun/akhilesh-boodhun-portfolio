@@ -2,7 +2,7 @@ import { useTheme } from "react-daisyui";
 import { Theme } from "./constants";
 import { useEffect, useState } from "react";
 
-const defaultTheme: string = Theme.RETRO;
+const defaultTheme: string = Theme.DARK;
 
 type Props = {
   setNavigationBarTheme: (theme: string) => void;
@@ -27,9 +27,9 @@ const ThemeToggle: React.FC<Props> = ({ setNavigationBarTheme }) => {
 
   const toggleTheme = () => {
     if (theme === defaultTheme) {
-      setTheme(Theme.DARK);
-      setNavigationBarTheme(Theme.DARK);
-      setThemeDaisy(Theme.DARK);
+      setTheme(Theme.RETRO);
+      setNavigationBarTheme(Theme.RETRO);
+      setThemeDaisy(Theme.RETRO);
     } else {
       setTheme(defaultTheme);
       setNavigationBarTheme(defaultTheme);
@@ -56,7 +56,7 @@ const ThemeToggle: React.FC<Props> = ({ setNavigationBarTheme }) => {
         </svg>
         <input
           type="checkbox"
-          checked={theme !== defaultTheme}
+          checked={theme === defaultTheme}
           className="toggle theme-controller"
           onChange={() => {
             toggleTheme();
