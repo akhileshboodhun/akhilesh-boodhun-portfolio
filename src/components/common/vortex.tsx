@@ -200,13 +200,14 @@ const Vortex: React.FC<VortexProps> = (props) => {
   const resize = useCallback(
     (canvas: HTMLCanvasElement, ctx?: CanvasRenderingContext2D) => {
       const { innerWidth, innerHeight } = window;
+      ctx?.save();
 
       canvas.width = innerWidth;
       canvas.height = innerHeight;
 
       center[0] = 0.5 * canvas.width;
       center[1] = 0.5 * canvas.height;
-      ctx?.save();
+      ctx?.restore();
     },
     [center]
   );
