@@ -198,7 +198,6 @@ const Vortex: React.FC<VortexProps> = (props) => {
   };
 
   const resize = useCallback(
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     (canvas: HTMLCanvasElement, ctx?: CanvasRenderingContext2D) => {
       const { innerWidth, innerHeight } = window;
 
@@ -207,6 +206,7 @@ const Vortex: React.FC<VortexProps> = (props) => {
 
       center[0] = 0.5 * canvas.width;
       center[1] = 0.5 * canvas.height;
+      ctx?.save();
     },
     [center]
   );
